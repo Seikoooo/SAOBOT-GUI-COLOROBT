@@ -12,6 +12,10 @@
 
 ## Pourquoi Saobot ?
 
+> 🎬 **Présentation vidéo** – Remplacez l’URL ci-dessous par votre trailer YouTube/Vimeo pour présenter Saobot. L’aperçu est cliquable.
+>
+> [![Demo vidéo](https://img.youtube.com/vi/xxxxxxxxxxx/maxresdefault.jpg)](https://www.youtube.com/watch?v=xxxxxxxxxxx)
+
 - **Expérience unifiée** : login premium, dashboard modulaire, télémétrie live et sauvegarde auto des profils.
 - **Contrôle chirurgical** : overlay FOV ultra-fin (circle/square/triangle/star/heart), clignotement RGB, stroke dynamique et transparence totale.
 - **Automations combo** : aimbot, triggerbot et anti-recul fonctionnent ensemble ou séparément avec profils tête/corps/pieds, offsets précis et temps de réaction au milliseconde.

@@ -2,6 +2,8 @@
 
 ![Saobot logo](saobot.ico)
 
+[![Saobot preview](PHOTO%20SAOBOT/images/LOGIN.png)](https://saobot.shop)
+
 **Saobot** est une interface premium qui réunit colorbot, overlay FOV évolué et module de spoofing USB autour d’une expérience inspirée de Valorant. L’objectif est de montrer comment automatiser la vision par couleur, l’intégration Arduino et le pilotage d’outils temps réel dans un cadre éducatif. Toute diffusion vise la recherche et l’apprentissage : l’utilisateur final est seul responsable de l’usage qu’il en fait. Le produit commercialisé est **uniquement fourni sous forme d’exécutable `Saobot.exe`** (aucun accès direct au code propriétaire).
 
 > ⚠️ **Avertissement pédagogique** – Saobot est fourni pour illustrer des concepts (vision couleur, hooking d’événements, automatisation HID). Nous ne cautionnons ni n’encourageons une utilisation contraire aux CGU de Riot Games ou d’un tiers. En téléchargeant ce dépôt vous acceptez d’assumer l’entière responsabilité des actions menées avec le logiciel.
@@ -22,14 +24,24 @@
 ## Fonctionnalités détaillées
 
 - **Portail de licence** : panneau « ACCÈS PREMIUM » avec ouverture de ticket/support rapide (Discord & site `https://saobot.shop`).
+[![Login premium](PHOTO%20SAOBOT/images/LOGIN.png)](https://saobot.shop)
 - **Command Center** :
   - *General* – backends de capture (dxcam/d3dshot), throttling, preview basse latence.
+[![General tab](PHOTO%20SAOBOT/images/general.png)](https://saobot.shop)
+[![General alt](PHOTO%20SAOBOT/images/geenral2.png)](https://saobot.shop)
   - *FOV Overlay* – formes multiples, animations RGB, blink, stroke ajustable.
+[![FOV overlay](PHOTO%20SAOBOT/images/fov.png)](https://saobot.shop)
   - *Aimbot* – vitesses X/Y indépendantes, offsets dynamiques, profils présets, safe-mode pour humains.
+[![Aimbot tab](PHOTO%20SAOBOT/images/aimbot.png)](https://saobot.shop)
+[![Aimbot presets](PHOTO%20SAOBOT/images/aimbot%202.png)](https://saobot.shop)
   - *Triggerbot* – délais personnalisables, filtres de couleur, zones flexibles.
+[![Triggerbot](PHOTO%20SAOBOT/images/Triggerbot.png)](https://saobot.shop)
   - *Anti-Recoil* – courbes personnalisées par arme/profil.
+[![Anti recoil](PHOTO%20SAOBOT/images/Anti%20recoil.png)](https://saobot.shop)
   - *Spoofing* – détection HID, clonage VID/PID, upload sketch `hardware/microcontroleur/arduino.ino`.
+[![Spoofing view](PHOTO%20SAOBOT/images/spoof.png)](https://saobot.shop)
   - *User/System* – infos licence, HWID, charge CPU, FPS capture.
+[![User tab](PHOTO%20SAOBOT/images/user.png)](https://saobot.shop)
 - **Overlay avancé** : fenêtrage frameless toujours-on-top, hints transparents, support multi-color palette & blinking.
 - **Journaux & support** : `logs/activity/` pour observer la calibration, `logs/crash/` pour analyser les exceptions, export simple lors d’une demande de support.
 
@@ -44,7 +56,7 @@
 
 ## Acheter & activer Saobot
 
-1. Rendez-vous sur **[saobot.shop](https://saobot.shop)** et choisissez une formule.
+1. Rendez-vous sur **[saobot.shop](https://saobot.shop)** et choisissez une formule (support instantané sur **[Discord](https://discord.gg/aQMcEPgUUa)**).
 2. Après paiement, **la clé de licence unique est envoyée par e‑mail** à l’adresse saisie lors de l’achat.
 3. Téléchargez le package client (zip) contenant uniquement `Saobot.exe` et le guide.
 4. Lancez `Saobot.exe`, renseignez la clé reçue : elle est automatiquement **verrouillée sur la machine (HWID)** et **ne peut pas être partagée ni réutilisée ailleurs**.
@@ -82,8 +94,8 @@ Saobot-package/
 
 ## Support & communauté
 
-- **Site** : [saobot.shop](https://saobot.shop)
-- **Discord** : bouton Support dans l’écran de connexion ou utilisez le lien imprimé dans l’app.
+- **Site officiel** : [saobot.shop](https://saobot.shop)
+- **Discord** : [discord.gg/aQMcEPgUUa](https://discord.gg/aQMcEPgUUa) (tickets, annonces, releases)
 - **Logs** : joignez `logs/activity/` + `logs/crash/` lors d’un ticket pour accélérer le diagnostic.
 
 ## Avertissements juridiques

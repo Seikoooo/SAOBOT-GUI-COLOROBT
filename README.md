@@ -106,6 +106,7 @@ Saobot-package/
 - L’utilisation peut violer les CGU de Valorant ou de Riot Games. Vous êtes seul responsable des risques encourus (bannissement, sanctions, pertes de compte, etc.).
 - Revente, rétro-ingénierie, redistribution ou partage de licence interdits sans accord écrit.
 - Toute tentative de contournement, de duplication ou de partage de clé (1 licence = 1 machine) entraîne la révocation immédiate sans remboursement.
+- Build vérifié le **25/11/2025** sur **Windows 11** et **Windows 10** (tests exhaustifs : capture, aimbot, spoofing Arduino, packaging PyInstaller). Fonctionne parfaitement à cette date.
 
 ---
 

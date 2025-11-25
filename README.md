@@ -2,9 +2,11 @@
 
 ![Saobot logo](saobot.ico)
 
-**Saobot** est une interface premium qui réunit colorbot, overlay FOV évolué et module de spoofing USB autour d’une expérience inspirée de Valorant. L’objectif est de montrer comment automatiser la vision par couleur, l’intégration Arduino et le pilotage d’outils temps réel dans un cadre éducatif. Toute diffusion vise la recherche et l’apprentissage : l’utilisateur final est seul responsable de l’usage qu’il en fait.
+**Saobot** est une interface premium qui réunit colorbot, overlay FOV évolué et module de spoofing USB autour d’une expérience inspirée de Valorant. L’objectif est de montrer comment automatiser la vision par couleur, l’intégration Arduino et le pilotage d’outils temps réel dans un cadre éducatif. Toute diffusion vise la recherche et l’apprentissage : l’utilisateur final est seul responsable de l’usage qu’il en fait. Le produit commercialisé est **uniquement fourni sous forme d’exécutable `Saobot.exe`** (aucun accès direct au code propriétaire).
 
 > ⚠️ **Avertissement pédagogique** – Saobot est fourni pour illustrer des concepts (vision couleur, hooking d’événements, automatisation HID). Nous ne cautionnons ni n’encourageons une utilisation contraire aux CGU de Riot Games ou d’un tiers. En téléchargeant ce dépôt vous acceptez d’assumer l’entière responsabilité des actions menées avec le logiciel.
+
+> ✅ **Pré-requis critique** – Installez impérativement Python **3.10 ou version ultérieure** sur la machine cliente avant d’exécuter `Saobot.exe`, faute de quoi l’application ne démarrera pas.
 
 ---
 
@@ -42,58 +44,41 @@
 
 ## Acheter & activer Saobot
 
-1. Rendez-vous sur **[saobot.shop](https://saobot.shop)** pour sélectionner une formule.
-2. Le paiement valide immédiatement une clé liée à votre HWID.
-3. Téléchargez la dernière release (`dist/Saobot.exe`) ou exécutez `python main.py` si vous préférez les sources.
-4. Saisissez la clé dans le portail d’accès. L’application affiche alors les informations de licence, la date d’expiration et les liens support.
+1. Rendez-vous sur **[saobot.shop](https://saobot.shop)** et choisissez une formule.
+2. Après paiement, **la clé de licence unique est envoyée par e‑mail** à l’adresse saisie lors de l’achat.
+3. Téléchargez le package client (zip) contenant uniquement `Saobot.exe` et le guide.
+4. Lancez `Saobot.exe`, renseignez la clé reçue : elle est automatiquement **verrouillée sur la machine (HWID)** et **ne peut pas être partagée ni réutilisée ailleurs**.
 
-> Besoin d’assistance ? Cliquez sur **Support Discord** dans la fenêtre de login pour ouvrir directement un ticket.
-
-## Installation développeur
-
-```powershell
-git clone https://github.com/<votre-org>/saobot.git
-cd saobot
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r documentation/requirements.txt
-python main.py
-```
-
-- `configuration/settings.ini` est généré automatiquement.
-- Le firmware Arduino se trouve dans `microcontroleur/arduino.ino` (Leonardo recommandé).
-- Pour générer l’exécutable Windows : `pyinstaller main.spec` → sortie `dist/Saobot.exe` (~100 Mo).
+> Support instantané : bouton **Support Discord** dans l’écran de connexion ou réponse directe au mail de licence.
 
 ## Utilisation rapide
 
-1. Lancer Saobot (`Saobot.exe` ou `python main.py`).
-2. Entrer la licence ➜ accès accordé.
-3. Configurer les modules nécessaires (Aimbot/Triggerbot/Anti-recoil/FOV/Spoofing).
-4. Cliquer **Lancer le bot** pour démarrer la capture et les actions automatisées.
-5. Utiliser l’onglet Spoofing pour flasher ou cloner un périphérique si nécessaire.
+1. Double-cliquez sur `Saobot.exe` (aucun accès ni exécution de `main.py` n’est fourni aux clients).
+2. Saisissez la clé reçue par e‑mail ➜ validation et vérrouillage sur votre PC.
+3. Paramétrez les modules nécessaires (Aimbot/Triggerbot/Anti-recoil/FOV/Spoofing).
+4. Cliquez sur **Lancer le bot** pour démarrer la session.
+5. Utilisez l’onglet Spoofing pour cloner/téléverser votre périphérique si nécessaire.
 
 ## Prérequis techniques
 
 - Windows 10/11 64 bits.
 - GPU compatible DirectX 11 (dxcam/d3dshot).
-- Python 3.10+ pour les profils développeurs.
+- **Installation locale de Python 3.10 ou version supérieure (obligatoire pour exécuter Saobot.exe)**.
 - Arduino Leonardo (ou compatible) pour le spoofing USB.
-- Connexion Internet pour la vérification de licence et le téléchargement d’outils (arduino-cli, dépendances pip).
+- Connexion Internet (activation licence, téléchargement arduino-cli, mises à jour).
 
 ## Architecture du dépôt
 
+La distribution client fournie sur GitHub/saobot.shop contient strictement :
+
 ```
-COLORBOT VALORANT MAIN GUI/
-├─ assets/                 # icônes, branding (saobot.ico)
-├─ src/
-│  ├─ application/         # GUI, capture, modules bot, spoofing
-│  └─ configuration/       # settings, parsers, helpers
-├─ microcontroleur/        # firmware Arduino + licence
-├─ documentation/          # requirements, guides bilingues
-├─ build/, dist/           # artefacts PyInstaller
-├─ logs/                   # activity + crash reports
-└─ main.py
+Saobot-package/
+├─ Saobot.exe          # Application finale à lancer
+├─ saobot.ico          # Logo (utilisable pour raccourcis)
+└─ Guide.pdf           # Instructions et FAQ
 ```
+
+> Le code source complet reste propriétaire et n’est pas distribué dans les livrables clients.
 
 ## Support & communauté
 
@@ -106,9 +91,8 @@ COLORBOT VALORANT MAIN GUI/
 - Saobot est fourni « tel quel » pour un usage éducatif/démonstratif. Aucune garantie quant aux conséquences en jeu ou sur votre compte.
 - L’utilisation peut violer les CGU de Valorant ou de Riot Games. Vous êtes seul responsable des risques encourus (bannissement, sanctions, pertes de compte, etc.).
 - Revente, rétro-ingénierie, redistribution ou partage de licence interdits sans accord écrit.
-- Toute tentative de contournement ou de duplication entraîne la révocation immédiate de la licence sans remboursement.
+- Toute tentative de contournement, de duplication ou de partage de clé (1 licence = 1 machine) entraîne la révocation immédiate sans remboursement.
 
 ---
 
 © 2025 – Saobot. Tous droits réservés. Toute diffusion hors contexte éducatif nécessite notre accord écrit.
-

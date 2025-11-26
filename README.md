@@ -2,11 +2,11 @@
 
 [![Saobot preview](PHOTO%20SAOBOT/images/LOGIN.png)](https://saobot.shop)
 
-**Saobot** est une interface premium qui réunit colorbot, overlay FOV évolué et module de spoofing USB autour d’une expérience inspirée de Valorant. L’objectif est de montrer comment automatiser la vision par couleur, l’intégration Arduino et le pilotage d’outils temps réel dans un cadre éducatif. Toute diffusion vise la recherche et l’apprentissage : l’utilisateur final est seul responsable de l’usage qu’il en fait. Le produit commercialisé est **uniquement fourni sous forme d’exécutable `Saobot.exe`** (aucun accès direct au code propriétaire) et s’installe via un setup tout-en-un qui configure automatiquement Python 3.12.
+**Saobot** est une interface premium qui réunit colorbot, overlay FOV évolué et module de spoofing USB autour d’une expérience inspirée de Valorant. L’objectif est de montrer comment automatiser la vision par couleur, l’intégration Arduino et le pilotage d’outils temps réel dans un cadre éducatif. Toute diffusion vise la recherche et l’apprentissage : l’utilisateur final est seul responsable de l’usage qu’il en fait. Le produit commercialisé est **uniquement fourni sous forme d’exécutable `Saobot.exe`** (aucun accès direct au code propriétaire) et s’installe via un setup tout-en-un qui configure automatiquement Python 3.10.
 
 > ⚠️ **Avertissement pédagogique** – Saobot est fourni pour illustrer des concepts (vision couleur, hooking d’événements, automatisation HID). Nous ne cautionnons ni n’encourageons une utilisation contraire aux CGU de Riot Games ou d’un tiers. En téléchargeant ce dépôt vous acceptez d’assumer l’entière responsabilité des actions menées avec le logiciel.
 
-> ✅ **Pré-requis critique** – L’installateur Saobot embarque Python **3.12** et gère tout automatiquement. Aucun prérequis manuel n’est demandé au client, mais Python reste nécessaire pour l’exécution (le setup le déploie pour vous).
+> ✅ **Pré-requis critique** – L’installateur Saobot embarque Python **3.10** et gère tout automatiquement. Aucun prérequis manuel n’est demandé au client, mais Python reste nécessaire pour l’exécution (le setup le déploie pour vous).
 
 ---
 
@@ -22,6 +22,7 @@
 - **Spoofing intégré** : flash Arduino Leonardo, clonage VID/PID et scripts CLI sans quitter l’app, idéal pour étudier la chaîne complète capture ➜ HID.
 - **Observabilité** : panneau systèmes, FPS capture, statut Arduino, logs temps réel, crash reporter dédié.
 - **Stack moderne** : PyQt5, numpy, dxcam/d3dshot, pyserial, packaging PyInstaller (Saobot.exe) prêt à diffuser.
+- **Nouvelles fonctionnalités** : Onglet Support / User avec boîte de contact pour accès direct au site web et Discord, confirmation de redémarrage pour éviter les pertes accidentelles.
 
 ## Fonctionnalités détaillées
 
@@ -40,7 +41,7 @@
 [![Triggerbot](PHOTO%20SAOBOT/images/Triggerbot.png)](https://saobot.shop)
   - *Anti-Recoil* – courbes personnalisées par arme/profil.
 [![Anti recoil](PHOTO%20SAOBOT/images/Anti%20recoil.png)](https://saobot.shop)
-  - *Spoofing* – détection HID, clonage VID/PID, upload sketch `hardware/microcontroleur/arduino.ino`.
+  - *Spoofing* – détection HID, clonage VID/PID, upload sketch `hardware/microcontroller/microcontroller.ino`.
 [![Spoofing view](PHOTO%20SAOBOT/images/spoof.png)](https://saobot.shop)
   - *User/System* – infos licence, HWID, charge CPU, FPS capture.
 [![User tab](PHOTO%20SAOBOT/images/user.png)](https://saobot.shop)
@@ -67,7 +68,7 @@
 
 ## Utilisation rapide
 
-1. Double-cliquez sur `SaobotSetup.exe` : il installe automatiquement Python 3.12 puis Saobot.
+1. Double-cliquez sur `SaobotSetup.exe` : il installe automatiquement Python 3.10 puis Saobot.
 2. Lancez Saobot via le raccourci, saisissez la clé reçue par e‑mail ➜ validation et verrouillage sur votre PC.
 3. Paramétrez les modules nécessaires (Aimbot/Triggerbot/Anti-recoil/FOV/Spoofing).
 4. Cliquez sur **Lancer le bot** pour démarrer la session.
@@ -77,7 +78,7 @@
 
 - Windows 10/11 64 bits.
 - GPU compatible DirectX 11 (dxcam/d3dshot).
-- Python 3.10+ (le setup installe automatiquement Python 3.12 si besoin, aucun prérequis manuel).
+- Python 3.10+ (le setup installe automatiquement Python 3.10 si besoin, aucun prérequis manuel).
 - Arduino Leonardo (ou compatible) **obligatoire pour piloter la souris** (mouvements/simulation HID) et donc pour faire fonctionner l’aimbot en toute discrétion.
 - Connexion Internet (activation licence, téléchargement arduino-cli, mises à jour).
 
@@ -94,6 +95,24 @@ Saobot-package/
 
 > Le code source complet reste propriétaire et n’est pas distribué dans les livrables clients.
 
+### Organisation du dépôt développeur
+
+```
+src/
+├─ application/          # Modules Python publics + proxys qui chargent les extensions compilées
+├─ compiled/             # Extensions Cython (.pyd) générées à partir des sources protégées
+├─ configuration/        # Gestion des settings, logs et persistance locale
+├─ system/               # Fonctions transverses (HWID, compat shim, etc.)
+└─ protected/            # Sources en clair compilées en extensions Cython
+```
+
+- **Modifier un module protégé** ➜ travaillez dans `src/protected/application`, puis exécutez `python scripts/build_extensions.py build_ext --inplace` (ou via la task associée) pour régénérer les `.pyd` dans `src/compiled/application`.
+- **Modifier un module protégé** ➜ travaillez dans `src/protected/<package>` (application/configuration/system), puis exécutez `python scripts/build_extensions.py build_ext --inplace` pour régénérer les `.pyd` correspondants dans `src/compiled/`.
+- **Chargement runtime** : chaque module public (`src.application.*`, `src.configuration.settings`, `src.system.*`) est un proxy qui tente d'abord `src.compiled...` puis retombe automatiquement sur la source protégée pour le développement.
+- **Couverture totale** : capture, souris, thèmes, gestion des settings et HWID résident désormais côté protégé et sont donc compilés au même titre que le cœur GUI/spoofer.
+- **Utilitaires système** : `src/system/*` ne contient plus que des proxys minces ; la logique vit dans `src/protected/system` et reste alignée avec `_alias_module` défini dans `src/__init__.py`.
+- Les artefacts de compilation intermédiaires sont stockés dans `build/cython/` et peuvent être nettoyés à volonté.
+
 ## Support & communauté
 
 - **Site officiel** : [saobot.shop](https://saobot.shop)
@@ -106,7 +125,7 @@ Saobot-package/
 - L’utilisation peut violer les CGU de Valorant ou de Riot Games. Vous êtes seul responsable des risques encourus (bannissement, sanctions, pertes de compte, etc.).
 - Revente, rétro-ingénierie, redistribution ou partage de licence interdits sans accord écrit.
 - Toute tentative de contournement, de duplication ou de partage de clé (1 licence = 1 machine) entraîne la révocation immédiate sans remboursement.
-- Build vérifié le **25/11/2025** sur **Windows 11** et **Windows 10** (tests exhaustifs : capture, aimbot, spoofing Arduino, packaging PyInstaller). Fonctionne parfaitement à cette date.
+- Build vérifié le **26/11/2025** sur **Windows 11** et **Windows 10** (tests exhaustifs : capture, aimbot, spoofing Arduino, packaging PyInstaller). Fonctionne parfaitement à cette date.
 
 ---
 

@@ -14,18 +14,25 @@ Saobot est une expérience premium tout-en-un inspirée de Valorant. L’applica
 
 [![Demo Saobot](https://img.youtube.com/vi/XXXXXXXXXXX/maxresdefault.jpg)](https://www.youtube.com/watch?v=XXXXXXXXXXX)
 
-> A REMPLACER.
+> Remplacez `XXXXXXXXXXX` par l’ID de votre vidéo YouTube/Vimeo. La miniature reste cliquable et ouvre la présentation (setup, connexion licence, aperçu des modules, etc.).
 
 ---
 
 ## POURQUOI SAOBOT ?
 
 - **Expérience premium** : login animé, thème inspiré Valorant, modules organisés par onglets, télémétrie live.
+- **Interface bilingue** : tout le panel (GUI principal, spoofer, logs) bascule en direct FR/EN.
 - **Colorbot chirurgical** : capture dxcam/d3dshot, overlay multi-formes, clignotements RGB, transparence temps réel.
 - **Automations combinables** : aimbot, triggerbot, anti-recoil et offsets peuvent être mixés en un clic, avec profils préconfigurés (tête/corps/pieds) et ajustements millimétrés.
 - **Spoofing intégré** : flash, clonage VID/PID, monitoring HID et scripts Arduino directement depuis l’interface.
 - **Sécurité** : le bot refuse de démarrer si la carte Arduino n’est pas détectée, si le firmware est absent ou si les licences ne sont pas valides.
 - **Observabilité** : panneaux User/System, logs activity/crash, crash reporter GUI, suivi FPS capture.
+
+### Nouveautés 2025.11
+
+- Localisation complète de l’outil de spoofing et synchronisation automatique avec le sélecteur de langue.
+- Harmonisation des logs/status backend (spoofer) avec le système de traduction commun.
+- Script Nuitka (`scripts/build_nuitka.ps1`) remis à jour pour recompiler un exécutable autonome en un clic.
 
 ---
 
@@ -92,6 +99,13 @@ Saobot est une expérience premium tout-en-un inspirée de Valorant. L’applica
 - Carte Arduino Leonardo (ou compatible) pour piloter la souris via HID
 - Connexion Internet pour l’activation des licences et la synchronisation des profils
 
+## Construire l'exécutable
+
+1. Assurez-vous que Python 3.10 et les dépendances listées dans `requirements.txt` sont installés.
+2. Ouvrez PowerShell à la racine du projet.
+3. Exécutez `scripts\build_nuitka.ps1` (options disponibles : `-OutputName`, `-DisableLTO`, etc.).
+4. Le dossier autonome est généré dans `build/nuitka/<Nom>.dist` avec `SaobotNuitka.exe` prêt à être distribué.
+
 ---
 
 ## OBTENIR SAOBOT
@@ -123,4 +137,3 @@ Support instantané : bouton Discord intégré ou [discord.gg/aQMcEPgUUa](https:
 ---
 
 © 2025 – Saobot. Tous droits réservés. Toute diffusion hors cadre éducatif ou démonstratif nécessite un accord écrit.
-

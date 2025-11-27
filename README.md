@@ -10,6 +10,14 @@ Saobot est une expérience premium tout-en-un inspirée de Valorant. L’applica
 
 ---
 
+## VIDÉO DE DÉMONSTRATION / INSTALLATION
+
+[![Demo Saobot](https://img.youtube.com/vi/XXXXXXXXXXX/maxresdefault.jpg)](https://www.youtube.com/watch?v=XXXXXXXXXXX)
+
+> Remplacez `XXXXXXXXXXX` par l’ID de votre vidéo YouTube/Vimeo. La miniature reste cliquable et ouvre la présentation (setup, connexion licence, aperçu des modules, etc.).
+
+---
+
 ## POURQUOI SAOBOT ?
 
 - **Expérience premium** : login animé, thème inspiré Valorant, modules organisés par onglets, télémétrie live.

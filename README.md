@@ -1,4 +1,4 @@
-# SAOBOT – Educational Tool for Programming and Automation
+# SAOBOT – Colorbot Auto aiming tool
 
 [![Saobot preview](PHOTO%20SAOBOT/images/LOGIN.png)](https://saobot.shop)
 
@@ -138,3 +138,4 @@ Support instantané : bouton Discord intégré ou [discord.gg/aQMcEPgUUa](https:
 ---
 
 © 2025 – Saobot. Tous droits réservés. Toute diffusion hors cadre éducatif nécessite un accord écrit.
+

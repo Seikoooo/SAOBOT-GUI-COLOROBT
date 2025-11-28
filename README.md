@@ -1,10 +1,10 @@
-# SAOBOT – VALORANT COLORBOT EXPERIENCE
+# SAOBOT – Educational Tool for Programming and Automation
 
 [![Saobot preview](PHOTO%20SAOBOT/images/LOGIN.png)](https://saobot.shop)
 
-Saobot est une expérience premium tout-en-un inspirée de Valorant. L’application associe colorbot, overlay FOV animé, aimbot, triggerbot, anti-recoil et spoofing Arduino dans une interface unique. L’objectif : démontrer comment combiner vision par couleur, automations HID et télémétrie temps réel. Toute utilisation en dehors d’un cadre éducatif reste sous la responsabilité de l’utilisateur final.
+Saobot est un outil éducatif tout-en-un pour l'apprentissage de la programmation, l'analyse d'images et l'automatisation logicielle. L’application associe colorbot, overlay FOV animé, aimbot, triggerbot, anti-recoil et spoofing Arduino dans une interface unique. L’objectif : démontrer comment combiner vision par couleur, automations HID et télémétrie temps réel. Toute utilisation pour tricher dans des jeux est interdite et reste sous la responsabilité exclusive de l’utilisateur final.
 
-> ⚠️ **Usage pédagogique** : Saobot illustre des concepts techniques (capture couleur, hooking HID, gestion de licences). Nous ne cautionnons aucune utilisation contraire aux CGU Riot Games. En téléchargeant ou en exécutant Saobot, vous acceptez d’assumer l’entièreté des risques.
+> ⚠️ **Usage pédagogique uniquement** : Saobot illustre des concepts techniques (capture couleur, hooking HID, gestion de licences). Nous ne cautionnons aucune utilisation contraire aux lois locales ou aux politiques des plateformes. En téléchargeant ou en exécutant Saobot, vous acceptez d’assumer l’entièreté des risques et responsabilités.
 
 > ✅ **Setup inclusif** : l’installateur embarque Python 3.10, configure les dépendances, déploie Saobot.exe, les drivers nécessaires et vérifie automatiquement la présence d’une carte Arduino Leonardo pour le pilotage souris.
 
@@ -20,13 +20,13 @@ Saobot est une expérience premium tout-en-un inspirée de Valorant. L’applica
 
 ## POURQUOI SAOBOT ?
 
-- **Expérience premium** : login animé, thème inspiré Valorant, modules organisés par onglets, télémétrie live.
+- **Expérience éducative** : login animé, thème moderne, modules organisés par onglets, télémétrie live pour l'apprentissage.
 - **Interface bilingue** : tout le panel (GUI principal, spoofer, logs) bascule en direct FR/EN.
 - **Colorbot chirurgical** : capture dxcam/d3dshot, overlay multi-formes, clignotements RGB, transparence temps réel.
-- **Automations combinables** : aimbot, triggerbot, anti-recoil et offsets peuvent être mixés en un clic, avec profils préconfigurés (tête/corps/pieds) et ajustements millimétrés.
-- **Spoofing intégré** : flash, clonage VID/PID, monitoring HID et scripts Arduino directement depuis l’interface.
+- **Automations combinables** : aimbot, triggerbot, anti-recoil et offsets peuvent être mixés en un clic, avec profils préconfigurés (tête/corps/pieds) et ajustements millimétrés pour l'étude des algorithmes.
+- **Spoofing intégré** : flash, clonage VID/PID, monitoring HID et scripts Arduino directement depuis l’interface pour comprendre la sécurité matérielle.
 - **Sécurité** : le bot refuse de démarrer si la carte Arduino n’est pas détectée, si le firmware est absent ou si les licences ne sont pas valides.
-- **Observabilité** : panneaux User/System, logs activity/crash, crash reporter GUI, suivi FPS capture.
+- **Observabilité** : panneaux User/System, logs activity/crash, crash reporter GUI, suivi FPS capture pour le débogage.
 
 ### Nouveautés 2025.11
 
@@ -81,9 +81,9 @@ Saobot est une expérience premium tout-en-un inspirée de Valorant. L’applica
 
 | Axe | Saobot |
 | --- | --- |
-| **Interface** | UI inspirée Valorant, animations, thèmes, preview live |
+| **Interface** | UI moderne, animations, thèmes, preview live pour l'éducation |
 | **Overlay** | Formes complexes, blink RGB, transparence ultra fine |
-| **Aimbot/Triggerbot** | Multiples profils, offsets précis, safe-mode |
+| **Aimbot/Triggerbot** | Multiples profils, offsets précis, safe-mode pour l'étude |
 | **Anti-recoil** | Courbes par arme, editing graphique |
 | **Spoofing** | Gestion Arduino intégrée, flash + clonage sans CLI externe |
 | **Sécurité** | Vérification licence serveur, binding HWID + username, contrôle Arduino obligatoire |
@@ -129,11 +129,12 @@ Support instantané : bouton Discord intégré ou [discord.gg/aQMcEPgUUa](https:
 
 ## AVERTISSEMENTS LÉGAUX
 
-- Produit fourni à des fins éducatives/démonstratives. Aucune garantie d’usage sur un jeu en ligne.
-- L’utilisation peut violer les CGU de Riot Games ou d’autres éditeurs : risque de ban/sanctions.
+- Produit fourni à des fins éducatives/démonstratives uniquement. Aucune garantie d’usage sur un jeu en ligne.
+- Toute utilisation pour tricher dans des jeux est interdite et de votre responsabilité exclusive. L’utilisation peut violer les lois locales ou les politiques des plateformes : risque de détection/sanctions.
 - Revente, rétro-ingénierie, partage de licence strictement interdits. Une licence = un HWID.
-- Saobot n’est pas affilié à Riot Games ou Valorant. Toute utilisation du nom est purement descriptive.
+- Saobot n’est pas affilié à aucun éditeur de jeux. Toute utilisation du nom est purement descriptive.
+- Nous déclinons toute responsabilité pour les conséquences légales ou autres découlant de l'utilisation de cet outil.
 
 ---
 
-© 2025 – Saobot. Tous droits réservés. Toute diffusion hors cadre éducatif ou démonstratif nécessite un accord écrit.
+© 2025 – Saobot. Tous droits réservés. Toute diffusion hors cadre éducatif nécessite un accord écrit.

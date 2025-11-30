@@ -14,7 +14,7 @@ Saobot est un outil éducatif tout-en-un pour l'apprentissage de la programmatio
 
 [![Demo Saobot](https://img.youtube.com/vi/XXXXXXXXXXX/maxresdefault.jpg)](https://www.youtube.com/watch?v=XXXXXXXXXXX)
 
-<iframe src="https://drive.google.com/file/d/1CGJU7LvR1S7DH6Wtj-kpz5OkbFMVpLQg/preview" width="640" height="480" allow="autoplay"></iframe>
+[▶ Voir la présentation Google Drive](https://drive.google.com/file/d/1CGJU7LvR1S7DH6Wtj-kpz5OkbFMVpLQg/preview)
 
 > Remplacez `XXXXXXXXXXX` par l’ID de votre vidéo YouTube/Vimeo. La miniature reste cliquable et ouvre la présentation (setup, connexion licence, aperçu des modules, etc.).
 
